@@ -12,17 +12,13 @@ header {
   padding: 10px;
   text-align: center;
 }
-
-/* Style the topnav */
 ul.topnav {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333333;
+  background-color: #1b7154;
 }
-
-/* Style links in topnav */
 ul.topnav li a {
   display: block;
   color: #f1f1f1;
@@ -30,7 +26,6 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-/* Change color on hover */
 ul.topnav li a:hover {
   background-color: #dddddd;
   color: black;
@@ -45,7 +40,6 @@ div.flex-container > div {
   margin: 10px;
 }
 
-/* Use media query and show the flex items vertically if screen width is less than 600px */
 @media screen and (max-width: 600px) {
   div.flex-container {
     flex-direction: column;
