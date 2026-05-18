@@ -38,6 +38,10 @@ div.flex-container {
 
 div.flex-container > div {
   margin: 10px;
+  border-color: #001101;
+  border: 1px solid;
+  border-radius: 2.5%;
+  padding: 15px;
 }
 
 @media screen and (max-width: 600px) {

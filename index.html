@@ -28,17 +28,26 @@
         <p>전에 게시한 글 바로가기</p>
       </div>
 
-      <div>
+      <div class="calendar-content">
         <h2 class="main">메인 콘텐츠</h2>
-        <p>
-          캘린더
-          <script src="/JS/script.js"></script>
-          <script>
-            printMonth();
-            printfCalender();
-          </script>
-        </p>
-        <p>?</p>
+        <div id="month"></div>
+        <div id="calendar"></div>
+        <script src="JS/script.js"></script>
+        <script>
+          try {
+            if (
+              typeof printMonth === "function" &&
+              typeof printfCalender === "function"
+            ) {
+              printMonth();
+              printfCalender();
+            } else {
+              console.error("달력 함수가 로드되지 않았습니다.");
+            }
+          } catch (e) {
+            console.error("달력 생성 중 오류:", e.message);
+          }
+        </script>
       </div>
 
       <div>

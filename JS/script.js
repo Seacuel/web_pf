@@ -1,5 +1,10 @@
 function printMonth() {
   const monthBox = document.getElementById("month");
+  if (!monthBox) {
+    console.error("ID 'month' 요소를 찾을 수 없습니다.");
+    return;
+  }
+
   var currentDate = new Date();
   var currentMonth = currentDate.getMonth();
   var monthNames = [
@@ -21,6 +26,10 @@ function printMonth() {
 
 function printfCalender(y, m) {
   const calendar_box = document.getElementById("calendar");
+  if (!calendar_box) {
+    console.error("ID 'calendar' 요소를 찾을 수 없습니다.");
+    return;
+  }
   var date = new Date();
   var nowY = date.getFullYear();
   var nowM = date.getMonth();
