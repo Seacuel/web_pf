@@ -6,11 +6,17 @@
 .calendar-content table {
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed;
 }
 
 .calendar-content td,
 .calendar-content th {
-  border: 1px solid black; /* 구분을 위해 테두리 추가 */
+  border: 1px solid black;
   height: 50px;
   text-align: center;
+}
+
+.calendar-content th {
+  background-color: #56c9a3;
+  color: rgb(0, 0, 0);
 }

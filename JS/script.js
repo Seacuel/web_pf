@@ -24,7 +24,7 @@ function printMonth() {
   monthBox.innerHTML = "<h2>" + monthNames[currentMonth] + "</h2>";
 }
 
-function printfCalender(y, m) {
+function printfCalendar(y, m) {
   const calendar_box = document.getElementById("calendar");
   if (!calendar_box) {
     console.error("ID 'calendar' 요소를 찾을 수 없습니다.");
