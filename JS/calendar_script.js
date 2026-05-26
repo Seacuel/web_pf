@@ -8,18 +8,18 @@ function printMonth() {
   var currentDate = new Date();
   var currentMonth = currentDate.getMonth();
   var monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "1월",
+    "2월",
+    "3월",
+    "4월",
+    "5월",
+    "6월",
+    "7월",
+    "8월",
+    "9월",
+    "10월",
+    "11월",
+    "12월",
   ];
   monthBox.innerHTML = "<h2>" + monthNames[currentMonth] + "</h2>";
 }
@@ -53,7 +53,7 @@ function printfCalendar(y, m) {
 
   var calendar = "<table>";
   calendar +=
-    "<tr><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th><th>SUN</th></tr>";
+    "<tr><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>일</th></tr>";
 
   var dNum = 1;
   for (var i = 1; i <= row; i++) {

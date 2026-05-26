@@ -1,8 +1,5 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
 }
@@ -30,22 +27,58 @@ ul.topnav li a:hover {
   background-color: #dddddd;
   color: black;
 }
-
-div.flex-container {
+/* 3단 레이아웃을 감싸는 컨테이너 */
+.flex-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  gap: 20px; /* 요소 간격 */
 }
 
-div.flex-container > div {
-  margin: 10px;
-  border-color: #001101;
-  border: 1px solid;
-  border-radius: 2.5%;
-  padding: 15px;
+/* 좌측 사이드바: 고정 크기 또는 최소 크기 확보 */
+.left-side {
+  flex: 0.3 0.3 120px; /* grow: 1, shrink: 1, basis: 200px */
+  min-width: 100px; /* 내용이 잘리는 에러 방지 */
 }
 
-@media screen and (max-width: 600px) {
-  div.flex-container {
-    flex-direction: column;
+/* 메인 콘텐츠: 사이드바보다 더 넓은 비율 유지 */
+.main-content {
+  flex: 3 1 600px; /* 메인이 더 많은 공간을 차지하도록 설정 */
+  min-width: 420px; /* 모바일 최소 화면에서도 버틸 수 있는 하한선 */
+}
+
+/* 우측 사이드바 */
+.right-side {
+  flex: 2 2 250px;
+  min-width: 150px;
+}
+
+/* 반응형 웹 디자인을 위한 미디어 쿼리 
+  태블릿 및 모바일 환경(1024px 이하)에서 레이아웃 붕괴 방지
+*/
+@media (max-width: 1024px) {
+  .flex-container {
+    flex-direction: column; /* 세로 배치로 전환 */
+  }
+
+  .left-side,
+  .right-side {
+    flex: 1 1 50%; /* 모든 영역이 가로 너비를 가득 채우도록 변경 */
+    min-width: 0; /* 세로 배치에서는 최소 너비 제한 해제 */
+  }
+
+  .main-content {
+    flex: 1 1 100%; /* 모든 영역이 가로 너비를 가득 채우도록 변경 */
+    min-width: 0; /* 세로 배치에서는 최소 너비 제한 해제 */
+  }
+  /* 모바일에서 우측 위젯(시계, 달력)을 하단으로 내리거나 순서 조정 가능 */
+  .left-side {
+    order: 2; /* 카테고리를 메인 아래로 */
+  }
+  .main-content {
+    order: 1; /* 글 내용이 모바일에서 가장 먼저 보이도록 설정 */
+  }
+  .right-side {
+    order: 3; /* 위젯들을 가장 아래로 */
   }
 }
