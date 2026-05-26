@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div.flex-container > div {
+  margin: 10px;
+  border-color: #001101;
+  border: 1px solid;
+  border-radius: 2.5%;
+  padding: 15px;
+}
+.clock-digital {
+  font-size: 25px;
+  font-weight: bold;
+}

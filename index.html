@@ -6,6 +6,8 @@
     <title>Document</title>
     <link href="CSS/style.css" rel="stylesheet" />
     <link href="CSS/calendar.css" rel="stylesheet" />
+    <link href="CSS/left_side.css" rel="stylesheet" />
+    <link href="CSS/right_side.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -21,41 +23,51 @@
       <li><a href="#">Photo</a></li>
       <li><a href="#">About</a></li>
     </ul>
+    <div class="flex-box">
+      <div class="flex-container">
+        <div class="left-side">
+          <h2>좌측 사이드</h2>
+          <p>전에 게시한 글 바로가기</p>
+        </div>
 
-    <div class="flex-container">
-      <div>
-        <h2 class="left-side">좌측 사이드</h2>
-        <p>전에 게시한 글 바로가기</p>
-      </div>
+        <div class="main-content">
+          <h2 class="main">메인 콘텐츠</h2>
+        </div>
 
-      <div class="calendar-content">
-        <h2 class="main">메인 콘텐츠</h2>
-        <div id="month"></div>
-        <div id="calendar"></div>
-        <script src="JS/script.js"></script>
-        <script>
-          try {
-            if (
-              typeof printMonth === "function" &&
-              typeof printfCalendar === "function"
-            ) {
-              printMonth();
-              printfCalendar();
-            } else {
-              console.error("달력 함수가 로드되지 않았습니다.");
-            }
-          } catch (e) {
-            console.error("달력 생성 중 오류:", e.message);
-          }
-        </script>
-      </div>
-
-      <div>
-        <h2 class="right-side">우측 사이드</h2>
-        <div class="clock">시계</div>
-        <div class="Todo">To-do list</div>
-        <div class="other-site">관련 사이트 바로가기</div>
+        <div class="right-side">
+          <div class="clock">
+            시계
+            <div class="clock-digital" id="clock_digital">
+              <script src="JS/clock_script.js"></script>
+            </div>
+          </div>
+          <div class="calendar-content">
+            <div class="clock-digital" id="clock_digital">
+              <script src="JS/clock_script.js"></script>
+            </div>
+            <div id="month"></div>
+            <div id="calendar"></div>
+          </div>
+          <div class="Todo">To-do list</div>
+          <div class="other-site">관련 사이트 바로가기</div>
+        </div>
       </div>
     </div>
   </body>
+  <script src="JS/calendar_script.js"></script>
+  <script>
+    try {
+      if (
+        typeof printMonth === "function" &&
+        typeof printfCalendar === "function"
+      ) {
+        printMonth();
+        printfCalendar();
+      } else {
+        console.error("달력 함수가 로드되지 않았습니다.");
+      }
+    } catch (e) {
+      console.error("달력 생성 중 오류:", e.message);
+    }
+  </script>
 </html>
