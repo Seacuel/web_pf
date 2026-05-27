@@ -37,18 +37,23 @@
         <div class="right-side">
           <div class="clock">
             시계
-            <div class="clock-digital" id="clock_digital">
-              <script src="JS/clock_script.js"></script>
-            </div>
+            <div class="clock-digital" id="clock_digital"></div>
           </div>
           <div class="calendar-content">
-            <div class="clock-digital" id="clock_digital">
-              <script src="JS/clock_script.js"></script>
-            </div>
             <div id="month"></div>
             <div id="calendar"></div>
           </div>
-          <div class="Todo">To-do list</div>
+          <div class="Todo" id="Todo">
+            <h2>To-do List</h2>
+            <input type="text" id="TodoInput" placeholder="해야할 일 입력" />
+            <span onclick="addTodo()" class="add-btn">Add</span>
+            <ul class="List" id="List">
+              <li>좌측 사이드바 완성</li>
+              <li>중앙 완성</li>
+              <li>우측 사이드바 완성</li>
+              <li>글 작성 설정 완성</li>
+            </ul>
+          </div>
           <div class="other-site">관련 사이트 바로가기</div>
         </div>
       </div>
@@ -70,4 +75,6 @@
       console.error("달력 생성 중 오류:", e.message);
     }
   </script>
+  <script src="JS/clock_script.js"></script>
+  <script src="JS/To_do.js"></script>
 </html>

@@ -37,8 +37,8 @@ ul.topnav li a:hover {
 
 /* 좌측 사이드바: 고정 크기 또는 최소 크기 확보 */
 .left-side {
-  flex: 0.3 0.3 120px; /* grow: 1, shrink: 1, basis: 200px */
-  min-width: 100px; /* 내용이 잘리는 에러 방지 */
+  flex: 1 1 180px; /* grow: 1, shrink: 1, basis: 200px */
+  min-width: 150px; /* 내용이 잘리는 에러 방지 */
 }
 
 /* 메인 콘텐츠: 사이드바보다 더 넓은 비율 유지 */
@@ -63,7 +63,7 @@ ul.topnav li a:hover {
 
   .left-side,
   .right-side {
-    flex: 1 1 50%; /* 모든 영역이 가로 너비를 가득 채우도록 변경 */
+    flex: 1 1 100%; /* 모든 영역이 가로 너비를 가득 채우도록 변경 */
     min-width: 0; /* 세로 배치에서는 최소 너비 제한 해제 */
   }
 
