@@ -5,6 +5,7 @@
 
     + 이후 시간과 sever에 대한 이해도가 높아지만 
     localstorage에 있는 것을 바탕으로 sever로 전환할 예정
+    높은 확률로 서버는 node.js와 Typescript로 구축
 */
 // 1. DOM 요소가 모두 로드된 후 이벤트 리스너 등록 (안전한 스크립트 실행)
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,0 +1,84 @@
+/* view.css */
+.view-body {
+  background-color: #f4f7f6;
+  padding: 50px 0; /* 상하 여백 */
+  min-height: 100vh;
+}
+
+.view-container {
+  background-color: white;
+  max-width: 900px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.view-header h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.view-date {
+  color: #888;
+  font-size: 1em;
+}
+
+.view-divider {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 30px 0;
+}
+
+.view-content {
+  font-size: 1.15em;
+  line-height: 1.8; /* 가독성을 위한 줄 간격 확보 */
+  color: #444;
+  min-height: 300px;
+}
+
+.view-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn-back {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #333;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #3498db;
+}
+.btn-edit:hover {
+  background-color: #2980b9;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+}
+.btn-delete:hover {
+  background-color: #c0392b;
+}
