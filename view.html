@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>글 읽기</title>
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/view.css" rel="stylesheet" />
+  </head>
+  <body class="view-body">
+    <div class="view-container container">
+      <div class="view-header">
+        <h1 id="view-title">제목을 불러오는 중...</h1>
+        <span id="view-date" class="view-date"></span>
+      </div>
+
+      <hr class="view-divider" />
+
+      <div id="view-content" class="view-content">내용을 불러오는 중...</div>
+
+      <div class="view-footer">
+        <a href="index.html" class="btn-back">목록으로 돌아가기</a>
+        <div class="action-buttons">
+          <button class="btn-edit" onclick="alert('수정 기능 미구현')">
+            수정
+          </button>
+          <button class="btn-delete" onclick="alert('삭제 기능 미구현')">
+            삭제
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/view.js"></script>
+  </body>
+</html>

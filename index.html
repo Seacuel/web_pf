@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
+    <!-- CSS 연결 -->
     <link href="CSS/style.css" rel="stylesheet" />
     <link href="CSS/calendar.css" rel="stylesheet" />
     <link href="CSS/left_side.css" rel="stylesheet" />
@@ -16,7 +17,8 @@
     </header>
 
     <ul class="topnav">
-      <li><a href="#">Home</a></li>
+      <!-- 상단 바로가기 링크 구현-->
+      <li><a href="https://seacuel.github.io/web_pf/">Home</a></li>
       <li>
         <a href="https://cyber.chungwoon.ac.kr">School</a>
       </li>
@@ -28,19 +30,64 @@
       <li><a href="https://github.com/">About</a></li>
     </ul>
     <div class="flex-box">
+      <!-- 전체 콘텐츠를 감싸는 레이아웃(컨테이너)-->
       <div class="flex-container">
         <div class="left-side">
+          <!-- 좌측 사이드바를 위한 공간 생성-->
           <h2>좌측 사이드</h2>
           <p>전에 게시한 글 바로가기</p>
         </div>
 
-        <div class="main-content">
-          <h2 class="main">메인 콘텐츠</h2>
-        </div>
+        <main class="main-content">
+          <!--  현재 web_pf에 있어서 가장 핵심적인 요소 [글 작성]
+                글 작성과 검색, 정렬 기능 구현
+                1) 글 작성
+                  - 현재로서는 단순 타이핑으로만 글 제목과 내용을 작성할 수 있게 함.
+                  작성된 글은 localstrage에 저장.
+                  저장한 글은 좌측 사이드바 '전에 게시한 글 바로가기'에 해당하므로
+                  글 제목과 함께 작성날짜를 보여주며 link 형식으로 활용
+                  => 이후 작성된 글을 수정, 삭제하는 기능도 구현할 예정
+                2) 검색
+                  - 글 제목을 적어 검색하면 제목에 같은 단어가 포함되어 있는 글을 검색해주는 기능
+                  => 글이 localrestorage에 저장되어 있다면 글 제목을 문자열로 가져와 검색한 단어와 비교하여
+                     일치한다면 '검색결과'와 함께 나열해줘서 보여주는 기능
+                3) 정렬
+                  - 글 작성할 때 작성날짜를 같이 저장하여 해당 날짜를 바탕으로 '최신', '오래된 순'으로 정렬
+                  => 이후 작성된 글을 들어갈 때 마다 증가하는 count를 만들어 조회수를 구현한 뒤
+                     조회순을 기준으로한 정렬도 구현할 예정
+        -->
+          <div class="main-header card">
+            <div class="header-title-row">
+              <h2>전체 글 목록</h2>
+              <a href="write.html" target="_blank" class="btn-write"
+                >새 글 작성</a
+              >
+            </div>
+
+            <div class="sort-bar">
+              <button>최신순</button>
+              <button>오래된순</button>
+              <button title="미구현">조회순(미구현)</button>
+              <input
+                type="text"
+                class="search-input"
+                placeholder="글 제목 검색..."
+              />
+            </div>
+          </div>
+          <div id="post-list" class="post-list"></div>
+        </main>
 
         <div class="right-side">
           <div class="clock">
             시계
+            <!--  Js로 웹 사이트 내에 보여줄 디지털 시계 구현
+                  비고 - 원래는 아날로그 시계를 구현하려 했으나
+                        아날로그 시계를 구현하려면 canvas, svg 등 그래픽 요소를 활용해서 제작해야 하므로
+                        제작 시간이 오래 걸리고 js로만 구현하기 어렵다고 판단하여 디지털 시계로 노선 변경
+                        이후 아날로그 시계를 구현하여 '디지털' / '아날로그' 버튼을 만들어서
+                        사용자가 원하는 시계 형태로 볼 수 있게 하는 것이 목표
+            -->
             <div class="clock-digital" id="clock_digital"></div>
           </div>
           <div class="calendar-content">
@@ -48,6 +95,13 @@
             <div id="calendar"></div>
           </div>
           <div class="Todo" id="Todo">
+            <!--  To-do List를 구현하기 위해 css로 간단한 입력, 목록을 만들고
+                  Js로 입력 내용을 목록에 구현하는 로직을 구현
+                  비고 - To-do List를 만들고 잘 작동하나
+                        체크리스트 기능을 하지 못 함.
+                        why?  목록에 있는 글을 누르면 글자에 빗금 표시와 함께 완료된 것으로 표현할 생각이였으나
+                              현재로는 단순 글 목록 저장하는 형태가 되어버림
+            -->
             <h2>To-do List</h2>
             <div class="input-group">
               <input type="text" id="TodoInput" placeholder="해야할 일 입력" />
@@ -71,23 +125,25 @@
         </div>
       </div>
     </div>
-  </body>
-  <script src="JS/calendar_script.js"></script>
-  <script>
-    try {
-      if (
-        typeof printMonth === "function" &&
-        typeof printfCalendar === "function"
-      ) {
-        printMonth();
-        printfCalendar();
-      } else {
-        console.error("달력 함수가 로드되지 않았습니다.");
+
+    <script src="JS/calendar_script.js"></script>
+    <script>
+      try {
+        if (
+          typeof printMonth === "function" &&
+          typeof printfCalendar === "function"
+        ) {
+          printMonth();
+          printfCalendar();
+        } else {
+          console.error("달력 함수가 로드되지 않았습니다.");
+        }
+      } catch (e) {
+        console.error("달력 생성 중 오류:", e.message);
       }
-    } catch (e) {
-      console.error("달력 생성 중 오류:", e.message);
-    }
-  </script>
-  <script src="JS/clock_script.js"></script>
-  <script src="JS/To_do.js"></script>
+    </script>
+    <script src="JS/clock_script.js"></script>
+    <script src="JS/To_do.js"></script>
+    <script src="JS/write.js"></script>
+  </body>
 </html>

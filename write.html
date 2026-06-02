@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>새 글 작성</title>
+    <link href="CSS/style.css" rel="stylesheet" />
+    <link href="CSS/write.css" rel="stylesheet" />
+  </head>
+  <body class="write-body">
+    <div class="write-container">
+      <input
+        type="text"
+        id="post-title"
+        class="editor-title"
+        placeholder="제목을 입력하세요"
+      />
+
+      <hr class="editor-divider" />
+
+      <textarea
+        id="post-content"
+        class="editor-content"
+        placeholder="내용을 자유롭게 적어보세요..."
+      ></textarea>
+
+      <div class="editor-footer">
+        <button class="btn-save">저장</button>
+      </div>
+    </div>
+    <script src="JS/write.js"></script>
+  </body>
+</html>
