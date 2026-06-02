@@ -20,24 +20,28 @@ div.flex-container > div {
   font-size: 25px;
   font-weight: bold;
   box-sizing: border-box;
-  margin-top: 10px;
-  margin: 5px;
+  margin-top: 15px;
+  margin: 10px;
   border-color: #001101;
   border: 1px solid;
   border-radius: 2.5%;
-  padding: 15px;
+  padding: 20px;
 }
 .Todo ul {
   margin: 0;
   padding: 0;
 }
 .Todo ul li {
+  font-size: 15px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   padding: 12px 8px 12px 40px;
   list-style-type: none;
+  word-break: keep-all;
   background: #898080;
-  font-size: 18px;
   transition: 0.2s;
 
   /* make the list items unselectable */
@@ -65,53 +69,44 @@ div.flex-container > div {
   border-width: 0 2px 2px 0;
   top: 10px;
   left: 16px;
-  transform: rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
   height: 15px;
   width: 7px;
 }
 .Todo .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+  padding: 8px 12px;
+  font-weight: bold;
 }
 .Todo .close:hover {
   background-color: #f44336;
   color: rgb(133, 115, 115);
 }
-.Todo .header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
+.Todo .input-group {
+  display: flex;
+  margin-bottom: 10px; /* 리스트와의 간격 확보 */
 }
-.Todo .header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 .Todo input {
   margin: 0;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 0;
-  width: 75%;
+  flex: 3; /* 75% 비율을 flex-grow로 대체 */
   padding: 10px;
-  float: left;
   font-size: 16px;
 }
+
 .Todo .addBtn {
   padding: 10px;
-  margin: 3px;
-  width: 25%;
+  margin: 0; /* 기존 margin 3px가 정렬을 엇나가지 않게 0으로 초기화 */
+  flex: 1; /* 25% 비율 */
   background: #b0b48c;
   color: #555;
-  float: left;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 0;
 }
+
 .Todo .addBtn:hover {
   background-color: #949494;
 }

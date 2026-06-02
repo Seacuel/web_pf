@@ -17,11 +17,15 @@
 
     <ul class="topnav">
       <li><a href="#">Home</a></li>
-      <li><a href="#">School</a></li>
-      <li><a href="#">Language</a></li>
-      <li><a href="#">Develop</a></li>
-      <li><a href="#">Photo</a></li>
-      <li><a href="#">About</a></li>
+      <li>
+        <a href="https://cyber.chungwoon.ac.kr">School</a>
+      </li>
+      <li><a href="https://www.w3schools.com/">Language</a></li>
+      <li>
+        <a href="https://school.programmers.co.kr/learn/challenges">Develop</a>
+      </li>
+      <li><a href="https://www.fujifilm-korea.co.kr/">Photo</a></li>
+      <li><a href="https://github.com/">About</a></li>
     </ul>
     <div class="flex-box">
       <div class="flex-container">
@@ -45,8 +49,10 @@
           </div>
           <div class="Todo" id="Todo">
             <h2>To-do List</h2>
-            <input type="text" id="TodoInput" placeholder="해야할 일 입력" />
-            <span onclick="addTodo()" class="add-btn">Add</span>
+            <div class="input-group">
+              <input type="text" id="TodoInput" placeholder="해야할 일 입력" />
+              <span onclick="addTodo()" class="add-btn">Add</span>
+            </div>
             <ul class="List" id="List">
               <li>좌측 사이드바 완성</li>
               <li>중앙 완성</li>
