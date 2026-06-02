@@ -42,7 +42,8 @@ ul.topnav li a:hover {
 }
 
 /* 메인 콘텐츠: 사이드바보다 더 넓은 비율 유지 */
-.main-content {
+.main-content,
+.main-header card {
   flex: 3 1 600px; /* 메인이 더 많은 공간을 차지하도록 설정 */
   min-width: 420px; /* 모바일 최소 화면에서도 버틸 수 있는 하한선 */
 }
@@ -67,7 +68,8 @@ ul.topnav li a:hover {
     min-width: 0; /* 세로 배치에서는 최소 너비 제한 해제 */
   }
 
-  .main-content {
+  .main-content,
+  .main-header card {
     flex: 1 1 100%; /* 모든 영역이 가로 너비를 가득 채우도록 변경 */
     min-width: 0; /* 세로 배치에서는 최소 너비 제한 해제 */
   }
@@ -75,10 +77,84 @@ ul.topnav li a:hover {
   .left-side {
     order: 2; /* 카테고리를 메인 아래로 */
   }
-  .main-content {
+  .main-content,
+  .main-header card {
     order: 1; /* 글 내용이 모바일에서 가장 먼저 보이도록 설정 */
   }
   .right-side {
     order: 3; /* 위젯들을 가장 아래로 */
   }
+}
+.main-content,
+.main-header card {
+  margin: 10px;
+  border-color: #001101;
+  border: 1px solid;
+  border-radius: 2.5%;
+  padding: 15px;
+}
+.header-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-write {
+  background-color: #1b7154;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-write:hover {
+  background-color: #145942;
+}
+.post-link {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 부모 요소의 글자색(검은색 등)을 그대로 따라감 */
+  display: block; /* a 태그가 박스 전체 영역을 차지하도록 블록화 */
+  margin-bottom: 20px;
+}
+
+/* 포스트 카드 디자인 (기존 .card와 결합) */
+.post-card {
+  border: 1px solid #eee;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease; /* 부드러운 애니메이션 준비 */
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* 마우스를 올렸을 때(Hover) 상호작용 디자인 */
+.post-link:hover .post-card {
+  transform: translateY(-5px); /* 위로 5px 떠오름 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자를 진하게 만들어 입체감 부여 */
+}
+
+.post-info h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* 내용 일부만 보여주기 (CSS 말줄임표 처리) */
+.post-snippet {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+
+  /* 멀티라인 말줄임표를 위한 필수 웹킷 속성 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 최대 3줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* 영역을 벗어나는 텍스트 숨김 */
+}
+
+.post-date {
+  color: #999;
+  font-size: 0.85em;
 }
